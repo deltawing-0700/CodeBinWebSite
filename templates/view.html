@@ -54,10 +54,15 @@
 function copyText() {
     var codeview = document.getElementById("codeview");
     code = codeview.innerText;
+    try{
     navigator.clipboard.writeText(code);
     var x = document.getElementById("snackbar");
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 1250);
+    }
+    catch(err){
+        alert("You need to change the protocol to https to copy code")
+    }
 }
 </script>
 
@@ -68,7 +73,7 @@ function copyText() {
      </div>
 <pre id = "codeview"style="border-radius:10px; margin: 5px"><code class="java"> {{ data[(id)]["code"] }} </code></pre>
 
-
+</
 
 
 
