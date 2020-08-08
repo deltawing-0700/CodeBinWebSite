@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for code in data %}
+{% for word in key_words %}
+{%if word|lower() in code["title"]|lower %}
+
+<div style="padding: 20px; border-radius: 5px; border: #99b8eb solid 1px; margin: 4px; box-shadow: inset 1px 1px  #99b8eb; cursor: pointer;"
+ onclick = "location.href='/view/{{ code["id"] }}'"
+ onmouseover="cursor: hand (a pointing hand)"
+ >
+    {{ code["title"] }} 
+</div>
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+
+{% endblock %}

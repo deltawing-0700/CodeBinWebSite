@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for i in data%}
+
+<div style="padding: 20px; border-radius: 5px; border: #99b8eb solid 1px; margin: 4px; box-shadow: inset 1px 1px  #99b8eb; cursor: pointer;" onclick = "location.href='/view/{{ i["id"] }}'">
+    {{ i["title"] }} 
+
+</div>
+{% endfor %}
+</div>
+{% endblock %}
